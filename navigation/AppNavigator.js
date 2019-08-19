@@ -1,6 +1,7 @@
 import React from 'react';
-import {createAppContainer, createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
-import { Platform } from 'react-native';
+import {createAppContainer, createMaterialTopTabNavigator} from 'react-navigation';
+
+import {constants} from '../util/constans'
 
 import DashBoardScreen from "../screen/DashBoardScreen";
 import AssignScreen from "../screen/AssignScreen";
@@ -12,7 +13,7 @@ import LabelScreen from "../screen/LabelsScreen";
 
 const TabNavigator = createMaterialTopTabNavigator({
         DashBoard: {screen: DashBoardScreen},
-        Assign: {screen: AssignScreen},
+        Assign: {screen: AssignScreen.bind(this, 'Assign-1792')},
         MultiAssign: {screen: MultiAssign},
         Unassign: {screen: UnassignScreen},
         Product: {screen: ProductScreen},
@@ -21,7 +22,7 @@ const TabNavigator = createMaterialTopTabNavigator({
     {
         tabBarOptions: {
             labelStyle: {
-                fontSize: 7,
+                fontSize: constants.navigationTabFontSize,
             }
         }
     }
